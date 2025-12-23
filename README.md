@@ -15,6 +15,12 @@ To clean up the computed data the user needs to use ./Allclean.
 
 To view the saved state, one can load state.pvsm to Paraview.
 
+PS
+Stefan_git contains Stefan test case setup. The meshes can be changed in Allrun.
+
+PS, PS
+There were multiple Stefan case try with different meshes and BCs. Also, the reference setup was tested and may not be included to Stefan_git folder.
+
 
 
 
