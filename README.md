@@ -11,7 +11,9 @@ To run the case the user must (1) make the file executable through chmod +x Allr
 
 To post-process the residual data the user needs to use ./Post command making it executable in the first place. 
 
-To clean up the computed data the user needs to use ./Allclean
+To clean up the computed data the user needs to use ./Allclean.
+
+To view the saved state, one can load state.pvsm to Paraview.
 
 
 
