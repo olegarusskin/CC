@@ -1,0 +1,15 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication fluent3DMeshToFoam -scale 0.001 mould_CC.msh
+runApplication renumberMesh -overwrite
+runApplication setFields
+# runApplication foamRun 2>&1 | tee -a log
+stdbuf -oL -eL foamRun 2>&1 | tee -a log
+#runApplication decomposePar
+#runApplication mpirun -np 6 foamRun -parallel 
+
+#------------------------------------------------------------------------------

@@ -1,0 +1,48 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvConstraints;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+limitKMin
+{
+    type        bound;
+    field       k;
+    min         1e-10;
+}
+
+limitEpsMin
+{
+    type        bound;
+    field       epsilon;
+    min         1e-12;
+}
+
+limitKMax
+{
+    type        limitMag;
+    cellZone    all;
+    field       k;
+    max         10;      
+}
+
+limitEpsMax
+{
+    type        limitMag;
+    cellZone    all;
+    field       epsilon;
+    max         1e8;      
+}
+
+
+// ************************************************************************* //

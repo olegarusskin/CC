@@ -1,0 +1,15 @@
+
+#!/bin/bash
+cd "${0%/*}" || exit 1
+
+. "${WM_PROJECT_DIR:?}/bin/tools/RunFunctions"
+
+runApplication python3 extract_residuals.py log
+
+rm -f log.python3
+
+runApplication python3 plot_wide_residuals.py log_residuals.csv
+
+rm -f log.python3
+
+#------------------------------------------------------------------------------
